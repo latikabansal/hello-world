@@ -5,7 +5,7 @@ node {
    stage ('msg') {
    bat 'echo checkout complete'}
    stage ('Build') {
-      bat 'mvn clean install'
+      bat 'clean install'
    }
 
 }

@@ -2,6 +2,8 @@ node {
     stage ('checkout') {
     
    checkout([$class: 'GitSCM', branches: [[name: '*/jenkinsfile']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/jleetutorial/maven-project.git']]])}
+   stage ('msg') {
+   bat 'echo checkout complete'}
    stage ('Build') {
       sh 'mvn clean install'
    }

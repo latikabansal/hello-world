@@ -4,8 +4,6 @@ node {
    checkout([$class: 'GitSCM', branches: [[name: '*/jenkinsfile']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/jleetutorial/maven-project.git']]])}
    stage ('msg') {
    bat 'echo checkout complete'}
-   stage ('sonar analysis') {
-   bat 'sonar:sonar  -Dsonar.host.url=http://localhost:9000  -Dsonar.login=feb1c57c6539920404e6029853405dd97693b73d'}
    stage ('Build') {
       bat 'mvn clean install'
    }
